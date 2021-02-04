@@ -1,0 +1,123 @@
+body {
+    background: #002754;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+  }
+  h1 {
+    text-transform: uppercase;
+    background: #002754;
+    display: inline-block;
+  }
+  h2 {
+    text-decoration: underline;
+    background: #7B6FDE;
+    width: 20%;
+    margin: auto;
+  }
+  div {
+    padding: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50px;
+    display: inline-block;
+  }
+  section {
+    width: 50vw;
+    height: 20vw;
+    margin: auto;
+    /* margin-bottom: 100px; */
+  }
+  #one {
+    background: rgb(200,60,60);
+  }
+  #two {
+    font-weight: 400;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+  #space {
+    background: #266ef6;
+  }
+  #power {
+    background: #e429f2;
+  }
+  #soul {
+    background: #ff8b00;
+  }
+  #reality {
+    background: #ff0130;
+  }
+  #mind {
+    background: #ffd300;
+  }
+  #time {
+    background: #12e772;
+  }
+  #scroll {
+    margin-bottom: 2000px;
+  }
+  /* START BELOW THIS LINE */
+/* 1: All elements present start with a static position by default. */
+
+#power{
+    /* 2:moving Power Stone to the left of the Space Stone.  Moving 225px from the right of the original position */
+    position:relative;
+    right:225px;
+}
+
+#space{
+    /* 3:moving the Space Stone below the power stone's new position.  Moving 115px from the right and 115 px from the top of the original position.*/
+    position:relative;
+    right:115px;
+    top:115px;
+}
+
+#soul{
+    /* 4: moving the Soul Stone to the bottom right of the screen, absolute position. */
+    position:absolute;
+    bottom:0;
+    right:0;
+    /* Bonus: setting the soul stone to have a higher Z-Index than the Mind stone (to pass in front of it) but lower than the Time stone(to pass behind it) */
+    z-index:1;
+}
+
+#reality{
+    /* 5:Setting the reality stone to possess an absolute position of 150px above the bottom of the screen */
+    position:absolute;
+    bottom:150px;
+    right:0;
+    /* Bonus: setting a z-index so that the Reality stone passes in front of the Time and Mind stones */
+    z-index:3;
+}
+
+#mind{
+    /* 6:Sets the mind stone against the right edge, fixed position to maintain while scrolling. */
+    position:fixed;
+    right:0;
+}
+
+#time{
+    /* 7: Moving the time stone to a top right fixed position. */
+    position:fixed;
+    right:0;
+    top:0;
+    /* Bonus: setting a z-index so that the Time stone passes in front of the Soul stone, but behind the Reality stone. */
+    z-index: 2;
+}
+
+h1{
+    /* 8: Letting the header stick to the top of the screen while it moves down the page. */
+    position:sticky;
+    top:0;
+    /* 9: Giving the header a higher Z-index than the Power and Space stones so that it passes in front of them as it scrolls down. */
+    z-index: 9001;
+}
+
+h2{
+    /* Bonus: setting the h2 elements to stick to the bottom of the h1.  The sections handle replacement as the scrolling down occurs, no extra code required. */
+    position:sticky;
+    top:65px;
+}
